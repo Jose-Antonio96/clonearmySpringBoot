@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xml:lang xmlns:th="http://www.thymeleaf.org">
+<head><title>Página principal</title></head>
+<body>
+<h1>Bienvenido a la Aplicación!</h1>
+<h2>Escoja entre las opciones provistas para crear su armada personal de clones</h2>
+<p>Welcome to <span th:text="${appClone}">Our App</span></p>
+
+
+
+<a th:href="@{/create}">Crear clon</a>
+<a th:href="@{/delete}">Eliminar clon</a>
+<a th:href="@{/read}">Ver clones</a>
+</body>
+</html>

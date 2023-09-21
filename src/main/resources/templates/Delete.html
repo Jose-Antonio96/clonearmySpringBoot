@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xml:lang xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eliminar clones</title>
+</head>
+
+<body>
+    <table border="2">
+        <tr>
+            <th>Nombre</th>
+        </tr>
+        <tr th:each="clone : ${clonNames}">
+            <td th:text="${clone}"></td>
+            <td>
+                <form action="/deleteclones" method="get">
+                    <input type="hidden" name="nameToDelete" th:value="${clone}">
+                    <input type="submit" value="Eliminar">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <a th:href="@{/}">Página principal</a>
+    <a th:href="@{/create}">Crear clon</a>
+    <a th:href="@{/read}">Ver clones</a>
+</body>
+
+</html>

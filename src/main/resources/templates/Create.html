@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xml:lang xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Pagina de creación de clones</title>
+</head>
+
+<body>
+        <p>Hola</p>
+        <form action="/createClon" method="GET">
+                <label for="clonname">Nombre del clon:</label>
+                <text id="clonname" name="nameToAdd">
+                        <input type="text" name="nameToAdd">
+                    </text>
+
+                <label for="jumppack">¿Tiene jumppack?</label>
+                <select id="jumppack" name="hasJumpPack">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                    </select>
+
+                <label for="fly">¿Puede volar?</label>
+                <select id="fly" name="canFly">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                    </select>
+
+                <input type="submit" value="Crear clon">
+            </form>
+
+    <a th:href="@{/}">Página principal</a>
+    <a th:href="@{/delete}">Eliminar clon</a>
+    <a th:href="@{/read}">Ver clones</a>
+</body>
+
+</html>
