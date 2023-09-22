@@ -12,29 +12,31 @@
 <head>
     <title>Actualizar clon</title>
 </head>
-<form action="/updateclones/{clonId}" method="POST">
+<form action="/updateclones/{clonId}" method="PUT">
     <input type="hidden" name="clonId" th:value="${clonId}">
-    
+
     <label for="clonname">Nombre del clon:</label>
     <input type="text" id="clonname" name="cloneName" th:value="${clon.cloneName}">
-    
+
     <label for="jumppack">¿Tiene jumppack?</label>
     <select id="jumppack" name="hasJumpPack">
         <option value="true" th:selected="${clon.hasJumpPack}">Sí</option>
         <option value="false" th:selected="${!clon.hasJumpPack}">No</option>
     </select>
-    
+
     <label for="fly">¿Puede volar?</label>
     <select id="fly" name="canFly">
         <option value="true" th:selected="${clon.canFly}">Sí</option>
         <option value="false" th:selected="${!clon.canFly}">No</option>
     </select>
-    
+
     <input type="submit" value="Actualizar clon">
 </form>
-<a th:href="@{/}">Página principal</a>
-<a th:href="@{/create}">Crear clones</a>
-<a th:href="@{/delete}">Eliminar clon</a>
+<div class="m-auto p-2">
+    <a th:href="@{/}">Página principal</a>
+    <a th:href="@{/create}">Crear clones</a>
+    <a th:href="@{/delete}">Eliminar clon</a>
+</div>
 </body>
 
 </html>

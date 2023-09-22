@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.armybuilder.clonearmy.models.Clon;
-import com.armybuilder.clonearmy.models.ClonData;
+import com.armybuilder.clonearmy.Clon;
+import com.armybuilder.clonearmy.ClonData;
 
 import java.util.List;
 import java.util.ArrayList;

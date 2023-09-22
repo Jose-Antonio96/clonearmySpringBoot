@@ -1,20 +1,15 @@
 package com.armybuilder.clonearmy.controllers;
 
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import com.armybuilder.clonearmy.Clon;
+import com.armybuilder.clonearmy.ClonData;
 
-import com.armybuilder.clonearmy.models.Clon;
-import com.armybuilder.clonearmy.models.ClonData;
-
-import java.util.List;
-import java.util.ArrayList;
 
 @Controller
 /**
@@ -53,27 +48,23 @@ public class UpdateCloneController {
      *
      * @param clon   el objeto Clon que contiene los valores actualizados
      * @param clonId el ID del clon que se actualizará
-     * @param model  el objeto Model para renderizar la vista
      * @return una cadena de texto que representa la URL de redirección
      */
-    @PostMapping("/updateclones/{clonId}")
-    public String updateClone(@ModelAttribute Clon clon, @PathVariable("clonId") int clonId, Model model) {
-        Clon existingClone = ClonData.getCloneById(clonId);
 
-        if (existingClone == null) {
-            // Manejar el caso cuando la instancia existente no se encuentra
-            return "redirect:/read";
-        }
-        
-        // Actualizar los valores de la instancia existente con los valores del objeto
-        // clon
-        existingClone.setCloneName(clon.getCloneName());
-        existingClone.setHasJumpPack(clon.isHasJumpPack());
-        existingClone.setCanFly(clon.isCanFly());
 
-        model.addAttribute("clonId", clonId);
+    @PutMapping("/updateclones/{clonId}")
+public String update(@PathVariable Integer clonId, @RequestBody Clon cloneData) {
+     Clon cloneDataExistent = ClonData.getCloneById(clonId);
 
-        return "redirect:/read";
-    }
+     cloneDataExistent.setCloneName(cloneData.getCloneName());
+     cloneDataExistent.setHasJumpPack(cloneData.isHasJumpPack());
+     cloneDataExistent.setCanFly(cloneData.isCanFly());
+
+     return "redirect:/read";
+
+    
+    
+}
+
 
 }

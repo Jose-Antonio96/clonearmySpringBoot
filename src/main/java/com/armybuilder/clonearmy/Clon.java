@@ -1,16 +1,16 @@
-package com.armybuilder.clonearmy.models;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.armybuilder.clonearmy;
 
 
-
+/**
+ * Creación de clones
+ */
 public class Clon {
     private static int nextId = 1;
     private int id;
     public String name;
     public boolean hasJumpPack;
     public boolean canFly;
+    
     
     
     public Clon(String name, int id, boolean hasJumpPack, boolean canFly) {
@@ -63,6 +63,8 @@ public class Clon {
     public void setCanFly(boolean canFly) {
         this.canFly = canFly;
     }
+
+    
 
 
 

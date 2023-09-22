@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html xml:lang xmlns:th="http://www.thymeleaf.org">
-<head><title>Página principal</title></head>
-<body>
-<h1>Bienvenido a la Aplicación!</h1>
-<h2>Escoja entre las opciones provistas para crear su armada personal de clones</h2>
-<p>Welcome to <span th:text="${appClone}">Our App</span></p>
+
+<head>
+    <title>Página principal</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body class="m-10 ml-10">
+    <h1>Bienvenido a la Aplicación!</h1>
+    <h2></h2>
+    
 
 
+    <div class="m-auto p-2">
+        <a class="btn btn-secondary" th:href="@{/create} ">Crear clon</a>
+        <a class="btn btn-secondary" th:href="@{/delete} ">Eliminar clon</a>
+        <a class="btn btn-secondary" th:href="@{/read}">Ver clones</a>
+    </div>
 
-<a th:href="@{/create}">Crear clon</a>
-<a th:href="@{/delete}">Eliminar clon</a>
-<a th:href="@{/read}">Ver clones</a>
 </body>
+
 </html>

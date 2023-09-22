@@ -10,6 +10,11 @@ public class MainPageController {
     @Value("${spring.application.name}")
     String appClone;
 
+    /**
+     * Página landing
+     * @param model
+     * @return
+     */
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("appClone", appClone);
