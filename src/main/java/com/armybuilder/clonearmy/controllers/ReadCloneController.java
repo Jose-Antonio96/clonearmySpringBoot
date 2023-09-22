@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.armybuilder.clonearmy.ClonData;
+
+import com.armybuilder.clonearmy.models.Clon;
+import com.armybuilder.clonearmy.models.ClonData;
+
 import java.util.List;
 import java.util.ArrayList;
-import com.armybuilder.clonearmy.Clon;
 
 @Controller
 public class ReadCloneController {
@@ -32,6 +34,7 @@ public class ReadCloneController {
             clonIds.add(clon.getCloneId());
             canFly.add(clon.isCanFly());
             hasJumpPack.add(clon.isHasJumpPack());
+            model.addAttribute("clonId_" + clon.getCloneId(), clon.getCloneId());
         }
     
         model.addAttribute("clonNames", clonNames);

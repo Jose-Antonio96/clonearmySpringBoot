@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xml:lang xmlns:th="http://www.thymeleaf.org">
+
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Actualizar clon</title>
@@ -7,35 +8,35 @@
 
 <!DOCTYPE html>
 <html xml:lang xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Actualizar clon</title>
 </head>
-<body>
-    <h1>Actualizar clon</h1>
-    <form action="/update" method="POST">
-        <input type="hidden" name="id" value="${clonId}">
-        
-        <label for="clonname">Nombre del clon:</label>
-        <input type="text" id="clonname" name="nameToAdd" value="${clonName}">
-        
-        <label for="jumppack">¿Tiene jumppack?</label>
-        <select id="jumppack" name="hasJumpPack">
-            <option value="true" th:selected="${hasJumpPack}">Sí</option>
-            <option value="false" th:selected="${!hasJumpPack}">No</option>
-        </select>
-        
-        <label for="fly">¿Puede volar?</label>
-        <select id="fly" name="canFly">
-            <option value="true" th:selected="${canFly}">Sí</option>
-            <option value="false" th:selected="${!canFly}">No</option>
-        </select>
-        
-        <input type="submit" value="Actualizar clon">
-    </form>
-    <a th:href="@{/}">Página principal</a>
-    <a th:href="@{/create}">Crear clones</a>
-    <a th:href="@{/delete}">Eliminar clon</a>
+<form action="/updateclones/{clonId}" method="POST">
+    <input type="hidden" name="clonId" th:value="${clonId}">
+    
+    <label for="clonname">Nombre del clon:</label>
+    <input type="text" id="clonname" name="cloneName" th:value="${clon.cloneName}">
+    
+    <label for="jumppack">¿Tiene jumppack?</label>
+    <select id="jumppack" name="hasJumpPack">
+        <option value="true" th:selected="${clon.hasJumpPack}">Sí</option>
+        <option value="false" th:selected="${!clon.hasJumpPack}">No</option>
+    </select>
+    
+    <label for="fly">¿Puede volar?</label>
+    <select id="fly" name="canFly">
+        <option value="true" th:selected="${clon.canFly}">Sí</option>
+        <option value="false" th:selected="${!clon.canFly}">No</option>
+    </select>
+    
+    <input type="submit" value="Actualizar clon">
+</form>
+<a th:href="@{/}">Página principal</a>
+<a th:href="@{/create}">Crear clones</a>
+<a th:href="@{/delete}">Eliminar clon</a>
 </body>
+
 </html>
 
 </html>

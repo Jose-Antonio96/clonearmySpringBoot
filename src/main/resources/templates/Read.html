@@ -11,15 +11,15 @@
             <th>ID</th>
             <th>Jumppack</th>
             <th>Fly</th>
+            <th>Editar</th>
         </tr>
-        <tr th:each="clone, iter : ${clonNames}"> 
-            
+        <tr th:each="clone, iter : ${clonNames}">
             <td th:text="${clone}"></td>
             <td th:text="${clonIds[iter.index]}"></td>
             <td th:text="${hasJumpPack[iter.index]}"></td>
             <td th:text="${canFly[iter.index]}"></td>
             <td>
-                <a th:href="@{/update}">Editar clon</a>
+                <a th:href="@{'/update/' + ${ + clonIds[iter.index]}}">Editar clon</a>
             </td>
         </tr>
     </table>

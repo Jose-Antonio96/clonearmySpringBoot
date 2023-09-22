@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clones Random</title>
+</head>
+
+<body>
+    <h1>Clones Random</h1>
+
+    <div class="container">
+        <img src="" alt="Clon" id="clonImage">
+        <h2>Nombre: <span id="clonName"></span></h2>
+
+        <div class="button">
+            <button id="button">Generar clon aleatorio</button>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector('#button');
+        const name = document.querySelector('#clonName');
+        
+
+const generateClon = async() => {
+    const url = 'https://randomuser.me/api';
+    const response = await fetch(url);
+    const {results} = await response.json();
+    const data = results[0];
+
+    clonName.textContent = data.name.first
+    
+}
+
+button.addEventListener('click', generateClon);
+    </script>
+</body>
+
+</html>

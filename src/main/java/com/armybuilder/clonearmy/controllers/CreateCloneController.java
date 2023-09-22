@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.armybuilder.clonearmy.Clon;
-import com.armybuilder.clonearmy.ClonData;
+import com.armybuilder.clonearmy.models.Clon;
+import com.armybuilder.clonearmy.models.ClonData;
 
 @Controller
 public class CreateCloneController {

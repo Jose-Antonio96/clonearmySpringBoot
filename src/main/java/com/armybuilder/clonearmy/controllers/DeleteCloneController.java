@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.armybuilder.clonearmy.models.Clon;
+import com.armybuilder.clonearmy.models.ClonData;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.armybuilder.clonearmy.Clon;
-import com.armybuilder.clonearmy.ClonData;
 
 @Controller
 public class DeleteCloneController {
