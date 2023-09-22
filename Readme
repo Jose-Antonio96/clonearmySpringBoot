@@ -1,0 +1,17 @@
+El editar no funciona todavía y se prueba por encima la api rest de randomuser
+
+Para hacerlo funcionar, es recomendable/necesario las siguientes extensiones
+
+- Extension Pack for Java
+- Maven for Java
+- Language support for Java
+- Spring Initializr Java Support
+- Spring Boot Extension pack
+
+Comandos a usar para ponerlo a funcionar:
+
+mvn clean
+
+mvn install
+
+Abrir Spring Boot Dashboard, y hacer click al botón arriba del todo con una flechita que al pasar por encima el ratón dice "Run"
